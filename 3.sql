@@ -1,0 +1,21 @@
+CREATE TABLE deposit_requests (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id TEXT NOT NULL,
+  email TEXT,
+  amount INTEGER NOT NULL,
+  upi_ref TEXT,
+  status TEXT NOT NULL DEFAULT 'pending',
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE withdrawal_requests (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id TEXT NOT NULL,
+  email TEXT,
+  amount INTEGER NOT NULL,
+  upi_id TEXT,
+  status TEXT NOT NULL DEFAULT 'pending',
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
